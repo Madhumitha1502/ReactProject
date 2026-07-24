@@ -1,0 +1,25 @@
+.skills-container{
+    width:90%;
+    max-width:1200px;
+    margin:40px auto;
+    display:flex;
+    gap:30px;
+}
+
+.skills-card{
+    flex:1;
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 10px 25px rgba(0,0,0,.1);
+}
+
+.skills-card h2{
+    margin-bottom:20px;
+    color:#07152E;
+}
+
+.skills-card p{
+    margin:12px 0;
+    font-size:18px;
+}

@@ -1,0 +1,23 @@
+.hero{
+    height:90vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    background:#f8fafc;
+    text-align:center;
+    padding:20px;
+}
+
+.hero h1{
+    font-size:48px;
+    color:#0f172a;
+    margin-bottom:20px;
+}
+
+.hero p{
+    width:60%;
+    font-size:20px;
+    color:#475569;
+    line-height:1.6;
+}

@@ -1,0 +1,47 @@
+.button-container{
+    display:flex;
+    justify-content:center;
+    margin:20px 0 60px;
+}
+
+.analyze-btn{
+    padding:18px 60px;
+    font-size:20px;
+    font-weight:bold;
+    border:none;
+    border-radius:12px;
+    cursor:pointer;
+    color:white;
+    background:linear-gradient(90deg,#7c3aed,#2563eb);
+    transition:0.3s;
+    box-shadow:0 10px 25px rgba(37,99,235,.3);
+}
+
+.analyze-btn:hover{
+    transform:translateY(-5px);
+    box-shadow:0 15px 30px rgba(37,99,235,.45);
+}
+
+.analyze-btn:active{
+    transform:scale(0.97);
+}
+
+.reset-btn{
+
+    margin-left:20px;
+    padding:18px 40px;
+    border:none;
+    border-radius:12px;
+    background:#ef4444;
+    color:white;
+    font-size:18px;
+    cursor:pointer;
+    transition:.3s;
+
+}
+
+.reset-btn:hover{
+
+    background:#dc2626;
+
+}
