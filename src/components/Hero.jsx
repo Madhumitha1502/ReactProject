@@ -16,7 +16,13 @@ function Hero() {
           skills to improve your chances of getting shortlisted.
         </p>
 
-        <button>
+        <button
+         onClick={() =>
+         document.getElementById("analyzer").scrollIntoView({
+          behavior:"smooth",
+         })
+         }
+         >
           Get Started
         </button>
 

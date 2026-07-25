@@ -45,3 +45,7 @@
     background:#dc2626;
 
 }
+.analyze-btn:disabled{
+    opacity: 0.7;
+    cursor:not-allowed;
+}

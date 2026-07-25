@@ -3,21 +3,24 @@ import "../styles/Feedback.css";
 function Feedback({ score }) {
 
   let title = "";
-  let message = "";
+let message = "";
 
-  if (score >= 80) {
-    title = "Excellent Resume";
-    message = "Your resume has a high chance of passing ATS screening.";
-  } 
-  else if (score >= 60) {
-    title = "Good Resume";
-    message = "Your resume is good. Add a few more relevant skills to improve your score.";
-  } 
-  else {
-    title = "Needs Improvement";
-    message = "Improve your resume by adding the missing skills and relevant projects.";
-  }
-
+if (score >= 90) {
+  title = "Excellent";
+  message = "Your resume is highly aligned with the job description.";
+}
+else if (score >= 75) {
+  title = "Very Good";
+  message = "Your resume matches most of the required skills.";
+}
+else if (score >= 50) {
+  title = "Good";
+  message = "Add the missing technical skills to improve your ATS score.";
+}
+else {
+  title = "Needs Improvement";
+  message = "Your resume needs more relevant technical skills for this role.";
+}
   return (
     <div className="feedback-card">
 

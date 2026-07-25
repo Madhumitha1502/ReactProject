@@ -4,7 +4,7 @@ function InputSection({ resume, setResume, job, setJob }) {
 
     return (
 
-        <section className="input-section">
+        <section className="input-section" id="analyzer">
 
             <div className="card">
 
@@ -21,13 +21,13 @@ function InputSection({ resume, setResume, job, setJob }) {
             </div>
 
             <div className="card">
-
                 <h2>Job Description</h2>
 
-                <p>Paste the Job Description</p>
+<p>Paste the complete job description below.</p>
 
-                <textarea
-                    placeholder="Java React Spring Boot MySQL Docker"
+<textarea
+  placeholder="Example:
+  We are looking for a Java Full Stack Developer with experience in Java, Spring Boot, React, MySQL and Git. The candidate should have good problem-solving skills and knowledge of REST APIs."
                     value={job}
                     onChange={(e)=>setJob(e.target.value)}
                 ></textarea>

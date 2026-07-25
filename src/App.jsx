@@ -1,3 +1,4 @@
+import skills from "./data/skills";
 import { useState } from "react";
 
 import Navbar from "./components/Navbar";
@@ -9,6 +10,7 @@ import Suggestions from "./components/Suggestions";
 import Feedback from "./components/Feedback";
 import History from "./components/History";
 import Footer from "./components/Footer";
+import StrengthMeter from "./components/StrengthMeter";
 
 import "./styles/AnalyzeButton.css";
 
@@ -16,7 +18,7 @@ function App() {
 
   const [resume, setResume] = useState("");
   const [job, setJob] = useState("");
-
+  const [loading,setLoading] = useState(false);
   const [score, setScore] = useState(0);
   const [matchedSkills, setMatchedSkills] = useState([]);
   const [missingSkills, setMissingSkills] = useState([]);
@@ -24,16 +26,23 @@ function App() {
   const [history, setHistory] = useState([]);
 
   const analyzeResume = () => {
+    if (resume.trim() === "" || job.trim() === "") {
+  alert("Please enter both Resume and Job Description.");
+  return;
+}
+    setLoading(true);
+    setTimeout(() => {
+   const resumeText = resume.toLowerCase();
 
-    const resumeSkills = resume
-      .toLowerCase()
-      .split(/[\s,]+/)
-      .filter(skill => skill);
+const jobText = job.toLowerCase();
 
-    const jobSkills = job
-      .toLowerCase()
-      .split(/[\s,]+/)
-      .filter(skill => skill);
+const resumeSkills = skills.filter(skill =>
+  resumeText.includes(skill)
+);
+
+const jobSkills = skills.filter(skill =>
+  jobText.includes(skill)
+);
 
     const matched = jobSkills.filter(skill =>
       resumeSkills.includes(skill)
@@ -59,6 +68,8 @@ function App() {
       },
       ...prev
     ]);
+    setLoading(false);
+  },2000);
 
   };
 
@@ -91,8 +102,9 @@ function App() {
         <button
           className="analyze-btn"
           onClick={analyzeResume}
+          disabled={loading}
         >
-          Analyze Resume
+          {loading ? "Analyzing..." : "Analyze Resume"}
         </button>
 
         <button
@@ -127,6 +139,8 @@ function App() {
       <History
         history={history}
       />
+
+      <StrengthMeter score={score} />
 
       <Footer />
 
